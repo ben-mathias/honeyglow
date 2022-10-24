@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 zoom=1">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href="style.css" rel='stylesheet'>
 <style>
       h1{
         font-size:7vw;
@@ -33,7 +31,7 @@
         font-size:3vw;
         text-align:center;
       }
-      .sweet, .savoury, .coffee, .tea, .smoothie, .special{
+      .sweet, .savory, .coffee, .tea, .smoothie, .special{
         display:none;
         font-size:2vw;
       }
@@ -205,7 +203,6 @@ min-height: 70px;
                 </ul>
             </nav>
         </div>
-	</header>
 
     <div class="heading">
         <h1>Order Online.</h1>
@@ -227,13 +224,13 @@ new MenuItem("House Granola", 15, "sweet"),
 new MenuItem("French Toast", 16, "sweet"),
 new MenuItem("Mama's Pancakes", 16, "sweet"),
   new MenuItem("Scones and Croissants", 18, "sweet"),
-  new MenuItem("Signature Avocado Toast", 14, "savoury"),
-  new MenuItem("Breakfast Sandy", 16, "savoury"),
-  new MenuItem("Eggs Benny", 19, "savoury"),
-  new MenuItem("Honeyglow Special", 18, "savoury"),
-  new MenuItem("Smoked Cacio Pasta", 14, "savoury"),
-  new MenuItem("Bagelsaurus", 17, "savoury"),
-  new MenuItem("Shakshuka", 20, "savoury"),
+  new MenuItem("Signature Avocado Toast", 14, "savory"),
+  new MenuItem("Breakfast Sandy", 16, "savory"),
+  new MenuItem("Eggs Benny", 19, "savory"),
+  new MenuItem("Honeyglow Special", 18, "savory"),
+  new MenuItem("Smoked Cacio Pasta", 14, "savory"),
+  new MenuItem("Bagelsaurus", 17, "savory"),
+  new MenuItem("Shakshuka", 20, "savory"),
   new MenuItem("Espresso", 3, "coffee"),
   new MenuItem("Americano", 3, "coffee"),
   new MenuItem("Macchiato", 3, "coffee"),
@@ -300,7 +297,7 @@ function td(content, className="")
 <script>
 
   let menuItemsSweet = 0;
-  let menuItemsSavoury = 0;
+  let menuItemsSavory = 0;
   let menuItemsDrinks = 0;
   var s = "";
   s+="<tr class='section' onclick='displaySweet()'><td colspan='3'> Sweet <td></td>";
@@ -318,12 +315,12 @@ function td(content, className="")
 
     console.log("menuItemsSweet: " + menuItemsSweet);
   }
-  s+="<tr class='section' onclick = 'displaySavoury()'> <td colspan='3'> Savoury <td></td>";
+  s+="<tr class='section' onclick = 'displaySavory()'> <td colspan='3'> Savory <td></td>";
   for (i=0; i< menuItems.length; i++)
   {
-    if (menuItems[i].type == "savoury"){
-      menuItemsSavoury++;
-      s += "<tr class='savoury'>";
+    if (menuItems[i].type == "savory"){
+      menuItemsSavory++;
+      s += "<tr class='savory'>";
 	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	    console.log("quan: " + i);
       s += td(menuItems[i].name, "itemName");
@@ -331,7 +328,7 @@ function td(content, className="")
 	    s+= "</tr>";
     }
 
-    console.log("menuItemsSavoury: " + menuItemsSavoury);
+    console.log("menuItemsSavory: " + menuItemsSavory);
   }
 
 s+= "</table> </form> </div>";
@@ -378,7 +375,7 @@ s+= "<form><table>";
 	    s+= "</tr>";
     }
   }
-  s+="<tr class='section' onclick = 'displaySmoothie()'> <td colspan='3'> Smoothies <td></td>";
+  s+="<tr class='section' onclick = 'displaySmoothie()'> <td colspan='3'> Smoothies (only available online) <td></td>";
   for (i=0; i< menuItems.length; i++)
   {
     if (menuItems[i].type == "smoothie"){
@@ -391,7 +388,7 @@ s+= "<form><table>";
 	    s+= "</tr>";
     }
   }
-  s+="<tr class='section' onclick = 'displaySpecial()'> <td colspan='3'> Special Lattes <td></td>";
+  s+="<tr class='section' onclick = 'displaySpecial()'> <td colspan='3'> Special Lattes (only available online) <td></td>";
   for (i=0; i< menuItems.length; i++)
   {
     if (menuItems[i].type == "special"){
@@ -478,22 +475,22 @@ function displaySweet(){
   }
 }
 
-function displaySavoury(){
-  savouryClicked++;
+function displaySavory(){
+  savoryClicked++;
   //console.log("menuItems length: " + menuItems.length);
-  if (savouryClicked % 2 == 1){
+  if (savoryClicked % 2 == 1){
     for (i=0;i<menuItems.length;i++){
       //console.log("item type: " + menuItems[i].type);
-      if (menuItems[i].type == "savoury"){
-          savouryItems[i - 4].style.display="table-row";
+      if (menuItems[i].type == "savory"){
+          savoryItems[i - 4].style.display="table-row";
           //console.log("i: " + i );
       }
     }
   }else{
     for (i=0;i<menuItems.length;i++){
       //console.log("item type: " + menuItems[i].type);
-      if (menuItems[i].type == "savoury"){
-          savouryItems[i - 4].style.display="none";
+      if (menuItems[i].type == "savory"){
+          savoryItems[i - 4].style.display="none";
       }
     }
   }
@@ -703,7 +700,7 @@ function submitYourOrder(){
 
 //Code starts running here
 let sweetItems = document.getElementsByClassName("sweet");
-let savouryItems = document.getElementsByClassName("savoury");
+let savoryItems = document.getElementsByClassName("savory");
 let coffeeItems = document.getElementsByClassName("coffee");
 let coffeeRadioItems = document.getElementsByClassName("coffeeRadio");
 let almondRadio = document.getElementById("Almond");
@@ -713,7 +710,7 @@ let teaItems = document.getElementsByClassName("tea");
 let smoothieItems = document.getElementsByClassName("smoothie");
 let specialItems = document.getElementsByClassName("special");
 let sweetClicked = 0;
-let savouryClicked = 0;
+let savoryClicked = 0;
 let coffeeClicked = 0;
 let teaClicked = 0;
 let smoothieClicked = 0;
