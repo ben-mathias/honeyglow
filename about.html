@@ -7,8 +7,52 @@
         body{
             font-family: 'Poppins';
         }
+        
+         header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 99;
+        }
+        
+         li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: auto;
+        }
+        
+        .navbar {
+            width: 95%;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+        }
+        
         .top{
             background-image: url("cooking.jpg");
+            padding: 300px;
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -65,6 +109,26 @@
 </head>
 
 <body>
+     <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="homepage.html" class+"logo"><font color="yellow">honey</font><font color="pink">glow.</font></a>
+                <ul class="menu">
+                    <li class="link"><a href="homepage.html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us!</a></li>
+                    <li class="link"><a href="team.html">Our Team</a></li>
+                    <li class="link"><a href="food.html">Food Menu</a></li>
+                    <li class="link"><a href="drink.html">Drink Menu</a></li>
+                    <li class="link"><a href="locations.html">Locations</a></li>
+                    <li class="link"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="top">
+    </div>
+    
     <div class = "top">
         <div class = "nav2">
             <a href="" id="food" target="_self">Food Menu
@@ -78,7 +142,7 @@
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             </a>
             <a href="team.html" id="our_team" target="_self">Our Team</a>
-            <a href="" id="contact" target="_self">
+            <a href="contact.html" id="contact" target="_self">
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbspContact Us</a>
         </div>
         <h1><a href="homepage.html" id="logo" target="_self">hg</a></h1>
@@ -87,6 +151,7 @@
         <h2>About Us</h2>
         <br /><br /><br />
     </div>
+    
     <br /><br /><br /><img id = "pasta" src = "pasta.jpg"><br /><br />
     <div class="content">
         <span style = "font-size: 50px; margin-left: 100px;">About<br /> 
