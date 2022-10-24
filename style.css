@@ -2,23 +2,6 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1 zoom=1">
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: black;
-            z-index: 99;
-        }
-        
-        li {
-            list-style: none;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
         .container {
             width: 1280px;
             margin: auto;
