@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 zoom=1">
+<style>
+      h1{
+        font-size:7vw;
+        text-align:center;
+        border: solid;
+
+      }
+      h2{
+        font-size:5vw;
+        text-align:center;
+        position:static;
+        width:50%;
+      }
+      table{
+        width:50%;
+        margin-left:0;
+        text-align:left;
+      }
+      .section{
+        font-size:3vw;
+        text-align:center;
+        background-color:#d38070;;
+        color:white;
+      }
+      .totalClass{
+        font-size:3vw;
+        text-align:center;
+      }
+      .sweet, .savoury, .coffee, .tea, .smoothie, .special{
+        display:none;
+        font-size:2vw;
+      }
+
+      .coffeeRadio{
+          display:none;
+          font-size:2vw;
+      }
+      select{
+        background-color:black;
+        color:white;
+      }
+      .YourOrder{
+        width:50%;
+       margin-left:50%;
+       position:absolute;
+       text-align:center;
+       border:solid;
+       margin-top:0px;
+       background-color:white;
+      }
+      .orderText{
+        font-size:5vw;
+
+      }
+      .order{
+        font-size:3vw;
+      }
+      input{
+        font-size:2vw;
+      }
+      .thankYou{
+          font-size:7vw;
+          text-align:center;
+          background-color:#d38070;;
+          color:white;
+      }
+      .replace{
+          font-size:2vw;
+          text-align:left;
+          margin-left:5%;
+          background-color:#d38070;;
+          border:solid white 5px;
+      }
+      *{
+         padding: 0;
+         margin: 0;
+        }
+
+      .heading {
+            padding: 250px;
+            background-image: url("OrderOnline.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+            color:#d38070;
+
+        }
+
+        body {
+            position: relative;
+            font-family: Poppins;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 99;
+            font-family: Poppins;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: auto;
+        }
+        
+.navbar {
+  width: 95%;
+margin: auto;
+min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+}
+
+       .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+        }
+        
+        button {
+              background-color:#d38070;
+              border: none;
+              color: black;
+              padding: 15px 32px;
+              text-align: center;
+              font-size: 16px;
+              border-style: solid;
+        }
+
+        button:hover {
+            background-color: yellow;
+        }
+          
+
+        .footer{
+            margin-top:150px;
+            max-width: 100%;
+            padding: 100px 15%;
+            background: black;
+            color:#d38070;;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer div{
+            text-align: center;
+
+        }
+
+        .col-2 {
+            flex-grow: 3;
+        }
+
+        .footer div h3 {
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .col-1 p {
+            color:#d38070;;
+        }
+</style>
+
+</head>
+<body>
+        <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class+"logo"><font color="yellow">honey</font><font color="pink">glow.</font></a>
+                <ul class="menu">
+                    <li class="link"><a href="index
+                        
+                        
+                        .html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us!</a></li>
+                    <li class="link"><a href="team.html">Our Team</a></li>
+                    <li class="link"><a href="food.html">Food Menu</a></li>
+                    <li class="link"><a href="drink.html">Drink Menu</a></li>
+                    <li class="link"><a href="locations.html">Locations</a></li>
+                    <li class="link"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="heading">
+        <h1>Order Online.</h1>
+    </div>
+
+<div class="thankYou"></div>
+
+<script>
+
+function MenuItem(name, cost,type)
+{
+	this.name = name;
+	this.cost=cost;
+    this.type=type;
+}
+
+menuItems = new Array(
+new MenuItem("House Granola", 15, "sweet"),
+new MenuItem("French Toast", 16, "sweet"),
+new MenuItem("Mama's Pancakes", 16, "sweet"),
+  new MenuItem("Scones and Croissants", 18, "sweet"),
+  new MenuItem("Signature Avocado Toast", 14, "savoury"),
+  new MenuItem("Breakfast Sandy", 16, "savoury"),
+  new MenuItem("Eggs Benny", 19, "savoury"),
+  new MenuItem("Honeyglow Special", 18, "savoury"),
+  new MenuItem("Smoked Cacio Pasta", 14, "savoury"),
+  new MenuItem("Bagelsaurus", 17, "savoury"),
+  new MenuItem("Shakshuka", 20, "savoury"),
+  new MenuItem("Espresso", 3, "coffee"),
+  new MenuItem("Americano", 3, "coffee"),
+  new MenuItem("Macchiato", 3, "coffee"),
+  new MenuItem("Cortado", 2, "coffee"),
+  new MenuItem("Flat White", 3, "coffee"),
+  new MenuItem("Latte", 4, "coffee"),
+  new MenuItem("Cappuccino", 2, "coffee"),
+  new MenuItem("Hot Chocolate", 3, "coffee"),
+  new MenuItem("English Breakfast", 3, "tea"),
+  new MenuItem("Lemongrass", 3, "tea"),
+  new MenuItem("Ginger", 3, "tea"),
+  new MenuItem("Peppermint", 2, "tea"),
+  new MenuItem("Jasmine", 3, "tea"),
+  new MenuItem("Masala", 4, "tea"),
+  new MenuItem("Blueberry Blast", 5, "smoothie"),
+  new MenuItem("Strawberry Lemonade", 5, "smoothie"),
+  new MenuItem("Matcha Smoothie", 5, "smoothie"),
+  new MenuItem("Passionfruit Dream", 5, "smoothie"),
+  new MenuItem("Honey Tumeric Latte", 5, "special"),
+  new MenuItem("Matcha", 5, "special"),
+  new MenuItem("Dirty Chai", 5, "special")
+);
+
+function makeSelect(name, minRange, maxRange)
+{
+	var t= "";
+	t = "<select name='" + name + "' size='1'>";
+	for (j=minRange; j<=maxRange; j++)
+	   t += "<option>" + j + "</option>";
+	t+= "</select>";
+	return t;
+}
+
+function td(content, className="")
+{
+	return "<td class = '" + className + "'>" + content + "</td>";
+}
+
+</script>
+
+<div class="YourOrder">
+<div class="orderText"> Your Order </div>
+<div class="replace">
+
+</div>
+
+<div class="order">
+<script>
+  var o = "";
+  o+="<tr> <td class='totalClass'> TOTAL <td></td>";
+  o+="<td> $<input type='text' class='total'></input><td></td></tr>";
+  o+="<br> <button class='submitOrder' onclick='submitYourOrder()'>SUBMIT ORDER </button>";
+  document.writeln(o);
+</script>
+</div>
+</div>
+
+<h2> FOOD </h2>
+
+<div class="food">
+<form>
+  <table>
+
+<script>
+
+  let menuItemsSweet = 0;
+  let menuItemsSavoury = 0;
+  let menuItemsDrinks = 0;
+  var s = "";
+  s+="<tr class='section' onclick='displaySweet()'><td colspan='3'> Sweet <td></td>";
+  for (i=0; i< menuItems.length; i++)
+  {
+    if (menuItems[i].type == "sweet"){
+      menuItemsSweet++;
+      s += "<tr class='sweet'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+      console.log("quan:" + i);
+	    s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+    }
+
+    console.log("menuItemsSweet: " + menuItemsSweet);
+  }
+  s+="<tr class='section' onclick = 'displaySavoury()'> <td colspan='3'> Savoury <td></td>";
+  for (i=0; i< menuItems.length; i++)
+  {
+    if (menuItems[i].type == "savoury"){
+      menuItemsSavoury++;
+      s += "<tr class='savoury'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	    console.log("quan: " + i);
+      s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+    }
+
+    console.log("menuItemsSavoury: " + menuItemsSavoury);
+  }
+
+s+= "</table> </form> </div>";
+
+s+= "<h2> DRINKS </h2>";
+
+s+= "<div class='drinks'>";
+s+= "<form><table>";
+
+  s+="<tr class='section' onclick = 'displayCoffee()'> <td colspan='3'> Coffee <td></td>";
+  
+  let milkName = "";
+  
+  for (i=0; i< menuItems.length; i++)
+  {
+
+      milkName = "milk" + i;
+    if (menuItems[i].type == "coffee"){
+      menuItemsDrinks++;
+      s += "<tr class='coffee'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	    console.log("quan: " + i);
+      s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+
+    s += "<tr class='coffeeRadio'>";
+	    s += "<td><input type='radio' name=milkName id='Almond' value='Almond'> Almond Milk</input></td>"
+        s += "<td><input type='radio' name=milkName id='Oat' value='Oat'> Oat Milk</input></td>"
+        s += "<td><input type='radio' name=milkName id='Cashew' value='Cashew'> Cashew Milk</input></td>"
+	    s+= "</tr>";
+    }
+  }
+  s+="<tr class='section' onclick = 'displayTea()'> <td colspan='3'> Tea <td></td>";
+  for (i=0; i< menuItems.length; i++)
+  {
+    if (menuItems[i].type == "tea"){
+      menuItemsDrinks++;
+      s += "<tr class='tea'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	    console.log("quan: " + i);
+      s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+    }
+  }
+  s+="<tr class='section' onclick = 'displaySmoothie()'> <td colspan='3'> Smoothies <td></td>";
+  for (i=0; i< menuItems.length; i++)
+  {
+    if (menuItems[i].type == "smoothie"){
+      menuItemsDrinks++;
+      s += "<tr class='smoothie'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	    console.log("quan: " + i);
+      s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+    }
+  }
+  s+="<tr class='section' onclick = 'displaySpecial()'> <td colspan='3'> Special Lattes <td></td>";
+  for (i=0; i< menuItems.length; i++)
+  {
+    if (menuItems[i].type == "special"){
+      menuItemsDrinks++;
+      s += "<tr class='special'>";
+	    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
+	    console.log("quan: " + i);
+      s += td(menuItems[i].name, "itemName");
+	    s += td("$" +menuItems[i].cost.toFixed(2), "cost");
+	    s+= "</tr>";
+    }
+  }
+  document.writeln(s);
+
+  //NOTES
+  //add additions section
+</script>    
+
+</table>
+</form>
+</div>
+
+<script>
+
+function order(quantity,name,cost,milk){
+    this.quantity=quantity;
+    this.name=name;
+    this.cost=cost;
+    this.milk=milk;
+}
+
+function addOrder(quan,name,cost,milk){
+
+    let exists = false;
+    let existIndex = 0;
+
+    for (i=0;i<orderItems.length;i++){
+        if (name == orderItems[i].name){
+            exists = true;
+            existIndex = i;
+        }else{
+            exists = false;
+        }
+    }
+
+    if (exists){
+        console.log("changing " + orderItems[existIndex].name + " from quan " + orderItems[existIndex].quantity + "to quan " + quan);
+        orderItems[existIndex].quantity = quan;
+        orderItems[existIndex].cost = cost;
+        orderItems[existIndex].milk = milk;
+    }else{
+        let tempOrder = new order(quan, name, cost,"");
+        orderItems.push(tempOrder);
+    }
+}
+
+function displayOrder(){
+    var d = "";
+    for (i=0;i<orderItems.length;i++){
+        d+= orderItems[i].quantity + " orders of " + orderItems[i].name;
+        if (orderItems[i].milk != ""){
+            d+= " (" + orderItems[i].milk + ") ";
+        }
+        d+= " $" + orderItems[i].cost + "<br>";
+    }
+    //Writing
+    rDiv[0].innerHTML = d;
+}
+
+function displaySweet(){
+  sweetClicked++;
+  if (sweetClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "sweet"){
+          sweetItems[i].style.display="table-row";
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "sweet"){
+          sweetItems[i].style.display="none";
+      }
+    }
+  }
+}
+
+function displaySavoury(){
+  savouryClicked++;
+  //console.log("menuItems length: " + menuItems.length);
+  if (savouryClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      //console.log("item type: " + menuItems[i].type);
+      if (menuItems[i].type == "savoury"){
+          savouryItems[i - 4].style.display="table-row";
+          //console.log("i: " + i );
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      //console.log("item type: " + menuItems[i].type);
+      if (menuItems[i].type == "savoury"){
+          savouryItems[i - 4].style.display="none";
+      }
+    }
+  }
+}
+
+function displayCoffee(){
+  coffeeClicked++;
+  if (coffeeClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "coffee"){
+        console.log("coffe i:"+i);
+          coffeeItems[i - 11].style.display="table-row";
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "coffee"){
+        console.log("coffe i:"+i);
+          coffeeItems[i - 11].style.display="none";
+          coffeeRadioItems[i-11].style.display ="none";
+      }
+    }
+  }
+}
+
+function displayTea(){
+  teaClicked++;
+  if (teaClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "tea"){
+          teaItems[i - 19].style.display="table-row";
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "tea"){
+          teaItems[i - 19].style.display="none";
+      }
+    }
+  }
+}
+
+function displaySmoothie(){
+  smoothieClicked++;
+  if (smoothieClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "smoothie"){
+          smoothieItems[i - 25].style.display="table-row";
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "smoothie"){
+          smoothieItems[i - 25].style.display="none";
+      }
+    }
+  }
+}
+
+function displaySpecial(){
+  specialClicked++;
+  if (specialClicked % 2 == 1){
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "special"){
+          specialItems[i - 29].style.display="table-row";
+      }
+    }
+  }else{
+    for (i=0;i<menuItems.length;i++){
+      if (menuItems[i].type == "special"){
+          specialItems[i - 29].style.display="none";
+      }
+    }
+  }
+}
+
+function displayTotalCost(index, q,prev) {
+
+  console.log("displaying total cost");
+  console.log("index:" + index);
+  console.log("quantity: " + q[index][0].value);
+	let quantity = q[index][0].value;
+  console.log("quantity2: " + quantity);
+	let c = menuItems[index].cost;
+	let totalEach = (c * quantity);
+  console.log("item total: " + totalEach);
+  let finalTotalText = document.getElementsByClassName("total");
+
+console.log("prev[index]: " + prev[index]);
+
+  console.log("final total text value: " + finalTotalText[0].value);
+     console.log("total each: " + totalEach);
+console.log("together: " + (( (finalTotalText[0].value * 100) + (totalEach * 100) ) /100));
+    //Adding cost of item selected to the existing subtotal.
+    //Makes sure if the quantity is decreased by the user, that the it will be subtracted
+    if (finalTotalText[0].value != ""){
+      if (quantity >= prev[index]){
+        console.log("quan>");
+        //finalTotalText[0].value = myRound( ( (finalTotalText[0].value * 100) + (totalEach * 100) ) /100 );
+        finalTotalText[0].value = (( (finalTotalText[0].value * 100) + (totalEach * 100) ) /100);
+        addOrder(quantity,menuItems[index].name,(menuItems[index].cost * quantity));
+        }else{
+        console.log("quan<");
+          finalTotalText[0].value = myRound( ( (finalTotalText[0].value * 100) - ( ( (prev[index] * c) - totalEach )  * 100) ) /100 );
+          addOrder(quantity,menuItems[index].name,(menuItems[index].cost * quantity));
+      }
+    }else{
+      finalTotalText[0].value = totalEach;
+      addOrder(quantity,menuItems[index].name,(menuItems[index].cost * quantity));
+    }
+
+    let milk = "";
+    milk = checkCoffee(index);
+
+    if (milk == "" && menuItems[index].quantity > 0){
+        alert("Please choose a type of milk for your coffeee");
+    }else{
+        //display
+        displayOrder();
+    }
+    //assigning new previous quantity of this item
+    console.log("prev[index]: " + prev[index]);
+    prev[index] = quantity;
+}
+
+function myRound(x){
+  console.log("x: " + x);
+    x=x*100;
+    x=Math.round(x);
+    x=x/100;
+    
+    if(( ( (Math.round( ((x-Math.floor(x)) ) * 100 )) %10) == 0) && ((x-Math.floor(x)) != 0)  ){
+        x = x + "0";
+    }else if(((x-Math.floor(x)) == 0)){
+        x = x + ".00";
+    }else{
+        x = x;
+    }
+    return x;
+}
+
+function checkCoffee(index){
+    //if 
+    console.log("checking coffeee");
+    let milk = "";
+
+    if(menuItems[index].type == "coffee"){
+
+        if (oatRadio.checked){
+            milk = "Oat";
+        }else if (almondRadio.checked){
+            milk = "Almond";
+        }else if (cashewRadio.checked){
+            milk = "Cashew";
+        }else{
+            //alert ("Please choose a type of milk for your coffee");
+        }
+
+        console.log("index num coffee:" + index);
+        coffeeRadioItems[index-11].style.display ="table-row";
+        console.log("Adding " + menuItems[index].name + " of quantity " + menuItems[index].quantity + " of milk " + milk);
+        //addOrder(menuItems[index].quantity,menuItems[index].name,(menuItems[index].cost * menuItems[index].quantity),milk)
+        return milk;
+    }
+    
+}
+
+function validateOrder(){
+    let tempArray = new Array();
+    let totalElem = document.getElementsByClassName("total");
+    
+    //checking there is at least one item ordered
+    if ((totalElem[0].value == "") || (totalElem[0].value == 0)){
+        tempArray.push("food order");
+    }
+
+    return tempArray;
+}
+
+function submitYourOrder(){
+    let alertArray = new Array();
+    alertArray = validateOrder();
+    let alertString = "";
+
+    alertString += "Your ";
+    for (i=0;i<alertArray.length;i++)
+    {
+        if (i == alertArray.length-1){
+            if (i == 0){
+                 alertString += alertArray[i] + " is missing. Please enter this field and submit your order!"
+            }else{
+                alertString += "and ";
+                 alertString += alertArray[i] + " are missing. Please enter these fields and submit your order!"
+            }
+        }else{
+            alertString += alertArray[i] + ", ";
+        }
+    }
+
+    //alerts user or thanks them for their order
+    if (alertString != "Your "){
+        alert(alertString);
+    }else{
+        tDiv[0].innerHTML = "THANK YOU FOR YOUR ORDER!";
+    }
+}
+
+//Code starts running here
+let sweetItems = document.getElementsByClassName("sweet");
+let savouryItems = document.getElementsByClassName("savoury");
+let coffeeItems = document.getElementsByClassName("coffee");
+let coffeeRadioItems = document.getElementsByClassName("coffeeRadio");
+let almondRadio = document.getElementById("Almond");
+let oatRadio = document.getElementById("Oat");
+let cashewRadio = document.getElementById("Cashew");
+let teaItems = document.getElementsByClassName("tea");
+let smoothieItems = document.getElementsByClassName("smoothie");
+let specialItems = document.getElementsByClassName("special");
+let sweetClicked = 0;
+let savouryClicked = 0;
+let coffeeClicked = 0;
+let teaClicked = 0;
+let smoothieClicked = 0;
+let specialClicked = 0;
+var r = "";
+let rDiv = document.getElementsByClassName("replace");
+let tDiv = document.getElementsByClassName("thankYou");
+let orderItems = new Array();
+
+let prevQArray = new Array();
+let quanArray = new Array();
+
+//access each quantity dropdown element
+for (i=0;i<menuItems.length;i++){
+  let name = "quan" + i;
+  quanArray.push(document.getElementsByName(name));
+  prevQArray.push(quanArray[i][0].value);
+  //console.log("pushed " + quanArray[i][0].value);
+}
+
+//console.log("quanArray[0]: " + quanArray[0][0]);
+
+//adds an event listener on change to each quanity dropdown element
+quanArray[0][0].addEventListener("change", function(){displayTotalCost(0, quanArray,prevQArray);});
+quanArray[1][0].addEventListener("change", function(){displayTotalCost(1, quanArray,prevQArray);});
+quanArray[2][0].addEventListener("change", function(){displayTotalCost(2, quanArray,prevQArray);});
+quanArray[3][0].addEventListener("change", function(){displayTotalCost(3, quanArray,prevQArray);});
+quanArray[4][0].addEventListener("change", function(){displayTotalCost(4, quanArray,prevQArray);});
+quanArray[5][0].addEventListener("change", function(){displayTotalCost(5, quanArray,prevQArray);});
+quanArray[6][0].addEventListener("change", function(){displayTotalCost(6, quanArray,prevQArray);});
+quanArray[7][0].addEventListener("change", function(){displayTotalCost(7, quanArray,prevQArray);});
+quanArray[8][0].addEventListener("change", function(){displayTotalCost(8, quanArray,prevQArray);});
+quanArray[9][0].addEventListener("change", function(){displayTotalCost(9, quanArray,prevQArray);});
+quanArray[10][0].addEventListener("change", function(){displayTotalCost(10, quanArray,prevQArray);});
+quanArray[11][0].addEventListener("change", function(){displayTotalCost(11, quanArray,prevQArray);});
+quanArray[12][0].addEventListener("change", function(){displayTotalCost(12, quanArray,prevQArray);});
+quanArray[13][0].addEventListener("change", function(){displayTotalCost(13, quanArray,prevQArray);});
+quanArray[14][0].addEventListener("change", function(){displayTotalCost(14, quanArray,prevQArray);});
+quanArray[15][0].addEventListener("change", function(){displayTotalCost(15, quanArray,prevQArray);});
+quanArray[16][0].addEventListener("change", function(){displayTotalCost(16, quanArray,prevQArray);});
+quanArray[17][0].addEventListener("change", function(){displayTotalCost(17, quanArray,prevQArray);});
+quanArray[18][0].addEventListener("change", function(){displayTotalCost(18, quanArray,prevQArray);});
+quanArray[19][0].addEventListener("change", function(){displayTotalCost(19, quanArray,prevQArray);});
+quanArray[20][0].addEventListener("change", function(){displayTotalCost(20, quanArray,prevQArray);});
+quanArray[21][0].addEventListener("change", function(){displayTotalCost(21, quanArray,prevQArray);});
+quanArray[22][0].addEventListener("change", function(){displayTotalCost(22, quanArray,prevQArray);});
+quanArray[23][0].addEventListener("change", function(){displayTotalCost(23, quanArray,prevQArray);});
+quanArray[24][0].addEventListener("change", function(){displayTotalCost(24, quanArray,prevQArray);});
+quanArray[25][0].addEventListener("change", function(){displayTotalCost(25, quanArray,prevQArray);});
+quanArray[26][0].addEventListener("change", function(){displayTotalCost(26, quanArray,prevQArray);});
+quanArray[27][0].addEventListener("change", function(){displayTotalCost(27, quanArray,prevQArray);});
+quanArray[28][0].addEventListener("change", function(){displayTotalCost(28, quanArray,prevQArray);});
+quanArray[29][0].addEventListener("change", function(){displayTotalCost(29, quanArray,prevQArray);});
+quanArray[30][0].addEventListener("change", function(){displayTotalCost(30, quanArray,prevQArray);});
+quanArray[31][0].addEventListener("change", function(){displayTotalCost(31, quanArray,prevQArray);});
+
+</script>
+
+<div class="footer">
+        <div class="col-1">
+            <h3>USEFUL INFO</h3>
+            <p>Please let us know about dietary restrictions or allergies</p><br>
+            <p>Ask us about our rewards program!</p>
+        </div>
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <form>
+                <input type="text" placeholder="Your email" required><br><br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col-3">
+        <h3>HQ</h3>
+        <p>177 College Ave, Medford, MA 02155</p><br>
+        <p>603-581-9725</p>
+        </div>
+    </div>
+
+</body>
+</html>
