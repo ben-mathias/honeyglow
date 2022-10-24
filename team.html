@@ -4,6 +4,74 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <title>Honeyglow team</title>
     <style>
+        
+        *{
+         padding: 0;
+         margin: 0;
+        }
+
+        .heading {
+            padding: 300px;
+            background-image: url("copenhagen.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+
+        body {
+            position: relative;
+        }
+
+        .gap {
+            padding: 50px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 99;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: auto;
+        }
+        
+        .navbar {
+            width: 95%;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+        }
+        
         #founders{
             text-align: center;
             font-size: 25px;
@@ -58,25 +126,78 @@
         #address{
             margin-left: 50px;
         }
+        
+         .footer{
+            margin-top:150px;
+            max-width: 100%;
+            padding: 100px 15%;
+            background: black;
+            color: pink;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer div{
+            text-align: center;
+
+        }
+
+        .col-2 {
+            flex-grow: 3;
+        }
+
+        .footer div h3 {
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .col-1 p {
+            color: pink;
+        }
+
+        form input{
+            width: 400px;
+            height: 45px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            outline: none;
+            border: none;
+        }
+
+        form button {
+            background: transparent;
+            border: 2px solid;
+            color: pink;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
-    <div class = "nav2">
-        <a href="" id="food" target="_self">Food Menu
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-        <a href="team.html" id="drinks" target="_self">Drink Menu</a>
-        <a href="about.html" id="about_us" target="_self">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            About Us</a>
-    </div>    
-    <div class = "nav1">
-        <a href="locations.html" id="locations" target="_self">Our Locations
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        </a>
-        <a href="" id="our_team" target="_self">Our Team</a>
-        <a href="team.html" id="contact" target="_self">
-            &nbsp&nbsp&nbsp&nbsp&nbsp&nbspContact Us</a>
-    </div>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="homepage.html" class+"logo"><font color="yellow">honey</font><font color="pink">glow.</font></a>
+                <ul class="menu">
+                    <li class="link"><a href="homepage.html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us!</a></li>
+                    <li class="link"><a href="team.html">Our Team</a></li>
+                    <li class="link"><a href="food.html">Food Menu</a></li>
+                    <li class="link"><a href="drink.html">Drink Menu</a></li>
+                    <li class="link"><a href="locations.html">Locations</a></li>
+                    <li class="link"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <h1><a href="index.html" id="logo" target="_self">hg</a></h1>
     <br />
     <br />
@@ -94,20 +215,23 @@
     </div>
     <br />
     <br />
-    <div class = "bottom">
-        <div id="honey">honeyglow.
-            <img style="float:right; width: 35px; border-radius: 0;" src="facebook.png">
-            <br />
-            <br />
-            <img style="float:right; width: 35px; border-radius: 0;" src="twitter.png">
-            <br />
-            <br />
-            <img style="float:right; width: 35px; border-radius: 0;" src="insta.png">
+    <div class="footer">
+        <div class="col-1">
+            <h3>USEFUL INFO</h3>
+            <p>Please let us know about dietary restrictions or allergies</p><br>
+            <p>Ask us about our rewards program!</p>
         </div>
-        <div id="address"> 
-            104 7th Ave S, New York, NY, 10014 
-            <br /> 
-            (505) 617 8254
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <form>
+                <input type="text" placeholder="Your email" required><br><br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col-3">
+        <h3>HQ</h3>
+        <p>177 College Ave, Medford, MA 02155</p><br>
+        <p>603-581-9725</p>
         </div>
     </div>
 </body>
