@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1 zoom=1">
+
+    <style ="text/css">
+        *{
+         padding: 0;
+         margin: 0;
+        }
+
+        .heading {
+            padding: 150px;
+            text-align: center;
+            background-color: white;
+            background-image: url("blob.png");
+        }
+
+        .heading h2 {
+            font-size: 100px;
+            border: solid;
+            color: #d38070;
+        }
+
+        body {
+            position: relative;
+            background-color: #d38070;
+            font-family: Poppins;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 99;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: auto;
+        }
+        
+        .navbar {
+            width: 95%;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .food-menu {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: white;
+            display: flex;
+            border: solid white;
+            max-width: 100%;
+        }
+
+        .coffee, .tea{
+        width: 40%;
+        margin-left: 25px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight:100;
+        }
+
+        .food-menu h1 {
+            font-weight: 200;
+            color: #cc338b
+        }
+
+        .food-menu h3 {
+            font-weight: 10;
+        }
+
+        .item {
+            display: flex;
+            font-weight: 100;
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+        }
+
+        .price {
+            width: 5%;
+            margin-top: 85px;
+            text-decoration: underline;
+        }
+
+        .price ul {
+            margin-top: 15px;
+        }
+
+        button {
+              background-color: pink;
+              border: none;
+              color: black;
+              padding: 15px 32px;
+              text-align: center;
+              font-size: 16px;
+              border-style: solid;
+        }
+
+        .footer{
+            max-width: 100%;
+            padding: 100px 15%;
+            background: black;
+            color: pink;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer div{
+            text-align: center;
+
+        }
+
+        .col-2 {
+            flex-grow: 3;
+        }
+
+        .footer div h3 {
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .col-1 p {
+            color: pink;
+        }
+
+        form input{
+            width: 400px;
+            height: 45px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            outline: none;
+            border: none;
+        }
+
+        form button {
+            background: transparent;
+            border: 2px solid;
+            color: pink;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><font color="#ebca64">h</font><font color="#d38070">g.</font></a>
+                <ul class="menu">
+                    <li class="link"><a href="homepage.html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us!</a></li>
+                    <li class="link"><a href="team.html">Our Team</a></li>
+                    <li class="link"><a href="food.html">Food Menu</a></li>
+                    <li class="link"><a href="drink.html">Drink Menu</a></li>
+                    <li class="link"><a href="locations.html">Locations</a></li>
+                    <li class="link"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="heading">
+        <h2>Drinks</h2>
+    </div>
+
+    <div class="food-menu">
+        <div class="coffee">
+        <br>
+        <h3><b>Coffee</b></h3>
+        <br>
+
+        <div class="item">
+            <div class="name"><b>Espresso</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Americano</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Macchiato</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Cortado</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Flat White</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Latte</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Cappuccino</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Hot Chocolate</b></div>
+        </div>
+        </div>
+        
+        <div class="price">
+            <ul>$4.00</ul>
+            <ul>$3.00</ul>
+            <ul>$3.00</ul>
+            <ul>$2.00</ul>
+            <ul>$3.00</ul>
+            <ul>$4.00</ul>
+            <ul>$2.00</ul>
+            <ul>$3.00</ul>
+        </div>
+
+
+        <div class="tea">
+            <br>
+            <h3><b>Tea</b></h3>
+            <br>
+
+        <div class="item">
+            <div class="name"><b>English Breakfast</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Lemongrass</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Ginger</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Peppermint</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Jasmine</b></div>
+        </div>
+
+        <div class="item">
+            <div class="name"><b>Masala</b></div>
+        </div>
+        </div>
+
+        <div class="price">
+            <ul>$3.00</ul>
+            <ul>$3.00</ul>
+            <ul>$3.00</ul>
+            <ul>$2.00</ul>
+            <ul>$3.00</ul>
+            <ul>$4.00</ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-1">
+            <h3>USEFUL INFO</h3>
+            <p>Please let us know about dietary restrictions or allergies</p><br>
+            <p>Ask us about our rewards program!</p>
+        </div>
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <form>
+                <input type="text" placeholder="Your email" required><br><br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col-3">
+        <h3>HQ</h3>
+        <p>177 College Ave, Medford, MA 02155</p><br>
+        <p>603-581-9725</p>
+        </div>
+    </div>
+</body>
+</html>
