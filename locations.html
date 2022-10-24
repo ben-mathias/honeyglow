@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 zoom=1">
+
+    <style ="text/css">
+        *{
+         padding: 0;
+         margin: 0;
+        }
+
+        .heading {
+            padding: 300px;
+            background-image: url("location_head.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 100px;
+            color: white;
+            border: solid;
+        }
+
+        body {
+            position: relative;
+            background-image: url("blob.png");
+            text-align: center;
+        }
+
+        .gap {
+            padding: 50px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 99;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 1280px;
+            margin: auto;
+        }
+        
+        .navbar {
+            width: 95%;
+            margin: auto;
+            min-height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .logo {
+            font-size: 2rem;
+        }
+
+        .info {
+            min-height: 200px;
+            text-align: center;
+        }
+
+        .city {
+            margin-top: 100px;
+            margin-left: 60px;
+            margin-right: 100px;
+            margin-bottom: 100px;
+        }
+        
+        .city-flip {
+            margin-top: 100px;
+            margin-left: 100px;
+            margin-right: 60px;
+            margin-bottom: 100px;
+        }
+
+        .city img {
+            float: right;
+            max-width: 500px;
+            max-height: 300px;
+            box-shadow: 10px 10px 10px 1px #888;
+        }
+
+        .city-flip img {
+            max-width: 500px;
+            float: left;
+            box-shadow: -5px 10px 10px 1px #888;
+        }
+
+        .info h1 {
+            font-size: 50px;
+        }
+
+        .info h2 {
+            margin-top: 40px;
+            font-size: 40px;
+        }
+
+        .info h3 {
+            font-size: 50px;
+        }
+
+        .info p {
+            font-size: 50px;
+        }
+        
+        @media screen and (max-width: 1000px){
+            .container {
+                max-width: 100%;
+            }
+
+            .info h1 {
+              font-size: 25px;
+            }
+
+            .gap {
+              padding: 5px;
+            }
+
+            .info h2 {
+              font-size: 20px;
+            }
+
+            .info img{
+              max-width: 300px;
+            }
+
+            h1 {
+              font-size: 50px;
+            }
+
+            .footer input {
+              width: 200px;
+            }
+
+            .info h3 {
+                font-size: 35px;
+            }
+            
+            .info p {
+                font-size: 15px;
+            }
+        }
+
+          @media screen and (max-width: 600px){
+            .container {
+                max-width: 500px;
+            }
+
+            .info h1 {
+              font-size: 13px;
+            }
+
+            .gap {
+              padding: 2px;
+            }
+
+            .info h2 {
+              font-size: 8px;
+            }
+
+            .info img{
+              max-width: 150px;
+            }
+
+            h1 {
+              font-size: 20px;
+            }
+
+            .footer input {
+              width: 100px;
+            }
+
+            .info h3 {
+                font-size: 20px;
+            }
+
+            .info p {
+                font-size: 10px;
+            }
+            
+        }
+
+        button {
+              background-color: pink;
+              border: none;
+              color: black;
+              padding: 15px 32px;
+              text-align: center;
+              font-size: 16px;
+              border-style: solid;
+        }
+
+        .footer{
+            margin-top:150px;
+            max-width: 100%;
+            padding: 100px 15%;
+            background: black;
+            color: pink;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .footer div{
+            text-align: center;
+
+        }
+
+        .col-2 {
+            flex-grow: 3;
+        }
+
+        .footer div h3 {
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .col-1 p {
+            color: pink;
+        }
+
+        form input{
+            width: 400px;
+            height: 45px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            outline: none;
+            border: none;
+        }
+
+        form button {
+            background: transparent;
+            border: 2px solid;
+            color: pink;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="homepage.html" class+"logo"><font color="yellow">honey</font><font color="pink">glow.</font></a>
+                <ul class="menu">
+                    <li class="link"><a href="homepage.html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us!</a></li>
+                    <li class="link"><a href="team.html">Our Team</a></li>
+                    <li class="link"><a href="food.html">Food Menu</a></li>
+                    <li class="link"><a href="drink.html">Drink Menu</a></li>
+                    <li class="link"><a href="locations.html">Locations</a></li>
+                    <li class="link"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="heading">
+        <h1>Our locations</h1>
+    </div>
+
+    <div class="info">
+        <div class="city">
+            <img src="boston.jpg"></img>
+            <h3>BOSTON, MA</h3><br>
+            <h2>245 Gloucester Street<br>
+                Boston, MA 02108</h2><br>
+            <p><bold>Hours: 8:00am - 6:00pm</bold></p>
+        </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="info">
+        <div class="city-flip">
+            <img src="cafe.jpg"></img>
+            <h3>NEW YORK CITY</h3><br>
+            <h2>8 Beach Street<br>
+                Tribeca 10007</h2><br>
+            <p><bold>Hours: 8:00am - 7:00pm</bold></p>
+        </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="info">
+        <div class="city">
+            <img src="ben-and-paula.jpg"></img>
+            <h3>LONDON, UK</h3><br>
+            <h2>1, Sky Garden Walk<br>
+                London EC3M 8AF</h2><br>
+            <p><bold>Hours: 7:00am - 5:00pm</bold></p>
+        </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <h3> Our three flagship locations, we have now 100+ franchises across the world. Come visit us, and make sure to
+         look out for the pink and yellow sign!</h3>
+    <div class="footer">
+        <div class="col-1">
+            <h3>USEFUL INFO</h3>
+            <p>Please let us know about dietary restrictions or allergies</p><br>
+            <p>Ask us about our rewards program!</p>
+        </div>
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <form>
+                <input type="text" placeholder="Your email" required><br><br>
+                <button type="submit">SUBSCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col-3">
+        <h3>HQ</h3>
+        <p>177 College Ave, Medford, MA 02155</p><br>
+        <p>603-581-9725</p>
+        </div>
+    </div>
+</body>
+</html>
