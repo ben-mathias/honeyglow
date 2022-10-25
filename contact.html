@@ -433,7 +433,7 @@ function addOrder(quan,name,cost,milk){
             exists = true;
             existIndex = i;
         }else{
-            exists = false;
+         
         }
     }
 
@@ -451,11 +451,13 @@ function addOrder(quan,name,cost,milk){
 function displayOrder(){
     var d = "";
     for (i=0;i<orderItems.length;i++){
+	 if (orderItems[i].quantity != 0){
         d+= orderItems[i].quantity + " orders of " + orderItems[i].name;
         if (orderItems[i].milk != ""){
             d+= " (" + orderItems[i].milk + ") ";
         }
         d+= " $" + orderItems[i].cost + "<br>";
+	 }
     }
     //Writing
     rDiv[0].innerHTML = d;
